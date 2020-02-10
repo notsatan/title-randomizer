@@ -147,7 +147,7 @@ def randomize(*, string_length: int, mode: Mode, include_digits: bool = use_digi
     # This string will be used to decide the characters that can be included in the random
     # string. Adding the upper case and lower case characters by default.
     random_restrictions: str = string.ascii_letters
-    if include_digits:
+    if include_digits is True:
         # Adding numbers to this string if required.
         random_restrictions += string.digits
 
@@ -312,7 +312,14 @@ def generate_names(root: str, extension_criteria: PickExtension, *,
 
             # Generating a random title of the specified length and attaching file
             # extension to the title.
-            new_title = f'{randomize(string_length=fixed_length, mode=randomize_mode)}.{ext}'
+            new_title = '{0}.{1}'.format(
+                randomize(
+                    string_length=fixed_length,
+                    mode=randomize_mode,
+                    include_digits=use_digits
+                ),
+                ext
+            )
 
             # Forming full path for the file using the randomized title.
             new_title = f'{os.path.join(os.path.split(orig_title)[0], new_title)}'
@@ -409,7 +416,7 @@ if __name__ == '__main__':
                   'length for file names.')
 
         # Asking whether to include numbers in the randomized names or not.
-        value = input('Use numbers in random file names (yes/no):').strip().lower()
+        value = input('Use numbers in random file names (yes/no): ').strip().lower()
         if value not in ['yes', 'no', 'true', 'false']:
             value = 'yes' if use_digits else 'no'
             print(f'Unexpected response. Using `{value}` as default')
