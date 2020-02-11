@@ -401,6 +401,14 @@ if __name__ == '__main__':
             # for the variables is a string by itself and thus does not matter.
             randomize_mode = value
 
+        value = input('Select a file selection mode (recursive/direct): ').strip().lower()
+        if value not in ['recursive', 'direct']:
+            print(f'Invalid input. Using `{selection_mode}` as default.')
+        elif value == 'recursive':
+            selection_mode = SelectionMode.recursive
+        elif value == 'direct':
+            selection_mode = SelectionMode.direct
+
         try:
             # Getting the length required for the file names.
             value = int(input('Required length for the random ' +
@@ -475,7 +483,8 @@ if __name__ == '__main__':
         # Once the file is opened, simply writing the original file names along with the
         # new files names (separated by the equality symbol). With one value on each line.
         for orig_name in name_pairs.keys():
-            text_file.write(f'{orig_name} \t{equality}\t {name_pairs[orig_name]}\n')
+            text_file.write(
+                f'{orig_name} \t{equality}\t {name_pairs[orig_name]}\n')
 
         # Once done, simply flushing and closing the file
         text_file.flush()
