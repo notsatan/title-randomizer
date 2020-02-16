@@ -4,25 +4,25 @@ A simple utility script that batch randomizes the names of all the files present
 <br>
 
 ## Table of Contents:
- - [What does this script do?](https://github.com/demon-rem/Title-Randomizer/new/master#what-does-this-script-do)
- - [How do I use this script?](https://github.com/demon-rem/Title-Randomizer/new/master#how-do-i-use-this-script)
-     - [Quick usage guide](https://github.com/demon-rem/Title-Randomizer/new/master#quick-usage-guide)
-     - [In-Depth usage guide](https://github.com/demon-rem/Title-Randomizer/new/master#in-depth-usage-guide)
-- [What are the input parameters the script requires?](https://github.com/demon-rem/Title-Randomizer/new/master#input-parameters)
-    - [Root Directory](https://github.com/demon-rem/Title-Randomizer/new/master#root-directory)
-    - [Operation Mode](https://github.com/demon-rem/Title-Randomizer/new/master#operation-mode)
-        - [Auto Mode v/s Manual Mode](https://github.com/demon-rem/Title-Randomizer/new/master#auto-mode-vs-manual-mode)
-    - [Randomization Scheme](https://github.com/demon-rem/Title-Randomizer/new/master#randomization-scheme)
-        - [Safe Mode v/s Fast Mode](https://github.com/demon-rem/Title-Randomizer/new/master#safe-mode-vs-fast-mode)
-    - [Selection Mode](https://github.com/demon-rem/Title-Randomizer/new/master#selection-mode)
-        - [Recursive Mode v/s Direct Mode](https://github.com/demon-rem/Title-Randomizer/new/master#recursive-mode-vs-direct-mode)
-    - [File title length](https://github.com/demon-rem/Title-Randomizer/new/master#file-title-length)
-    - [Include numbers in file titles](https://github.com/demon-rem/Title-Randomizer/new/master#include-numbers)
-    - [Extension recognition criteria](https://github.com/demon-rem/Title-Randomizer/new/master#extenstion-recongition)
-        - [Hard Mode v/s Soft Mode](https://github.com/demon-rem/Title-Randomizer/new/master#hard-mode-vs-soft-mode)
--    [I messed up, how do I undo the damage?](https://github.com/demon-rem/Title-Randomizer/new/master#how-to-undo-the-damage)
- - [What is the purpose of making this script?](https://github.com/demon-rem/Title-Randomizer/new/master#why-make-this-script)
- - [Meme(s)](https://github.com/demon-rem/Title-Randomizer/new/master#i-want-memes-gib-memes) :p
+ - [What does this script do?](https://github.com/demon-rem/Title-Randomizer#what-does-this-script-do)
+ - [How do I use this script?](https://github.com/demon-rem/Title-Randomizer#how-do-i-use-this-script)
+     - [Quick usage guide](https://github.com/demon-rem/Title-Randomizer#quick-usage-guide)
+     - [In-Depth usage guide](https://github.com/demon-rem/Title-Randomizer#in-depth-usage-guide)
+- [What are the input parameters the script requires?](https://github.com/demon-rem/Title-Randomizer#input-parameters)
+    - [Root Directory](https://github.com/demon-rem/Title-Randomizer#root-directory)
+    - [Operation Mode](https://github.com/demon-rem/Title-Randomizer#operation-mode)
+        - [Auto Mode v/s Manual Mode](https://github.com/demon-rem/Title-Randomizer#auto-mode-vs-manual-mode)
+    - [Randomization Scheme](https://github.com/demon-rem/Title-Randomizer#randomization-scheme)
+        - [Safe Mode v/s Fast Mode](https://github.com/demon-rem/Title-Randomizer#safe-mode-vs-fast-mode)
+    - [Selection Mode](https://github.com/demon-rem/Title-Randomizer#selection-mode)
+        - [Recursive Mode v/s Direct Mode](https://github.com/demon-rem/Title-Randomizer#recursive-mode-vs-direct-mode)
+    - [File title length](https://github.com/demon-rem/Title-Randomizer#file-title-length)
+    - [Include numbers in file titles](https://github.com/demon-rem/Title-Randomizer#include-numbers)
+    - [Extension recognition criteria](https://github.com/demon-rem/Title-Randomizer#extenstion-recongition)
+        - [Hard Mode v/s Soft Mode](https://github.com/demon-rem/Title-Randomizer#hard-mode-vs-soft-mode)
+-    [I messed up, how do I undo the damage?](https://github.com/demon-rem/Title-Randomizer#how-to-undo-the-damage)
+ - [What is the purpose of making this script?](https://github.com/demon-rem/Title-Randomizer#why-make-this-script)
+ - [Meme(s)](https://github.com/demon-rem/Title-Randomizer#i-want-memes-gib-memes) :p
 
 ## What does this script do?
 This is a simple utility script that will **batch rename** all the files in the given directory with completely random titles.
@@ -37,7 +37,7 @@ This is a simple utility script that will **batch rename** all the files in the 
 - Run the file `BatchRename.py`
 - Enter the required input when you're asked to
 
-If you're unsure about the input to give, check out [this section](https://github.com/demon-rem/Title-Randomizer/new/master#input-parameters)
+If you're unsure about the input to give, check out [this section](https://github.com/demon-rem/Title-Randomizer#input-parameters)
 
 ## Quick Usage Guide
 This section teaches you how to use the script in `Auto mode` and should be enough to give you a basic understanding on how to use this script within the shortest amount of time possible
@@ -46,18 +46,18 @@ This section teaches you how to use the script in `Auto mode` and should be enou
 
 Here are the steps to follow:
 - Copy the *full-path* of the **directory** containing the files whose titles are to be randomized. Paste this path when asked for the root directory.
-- Next, when asked to select modes, enter `auto` as the input. This selects `auto mode`, and the script uses default values for the inputs. [Check out the [In-Depth Usage Guide](https://github.com/demon-rem/Title-Randomizer/new/master#in-depth-usage-guide) for using **manual mode**]
-- When asked for the criteria to select file extensions, the average user can choose `hard mode`. If you're unsure about this, check out the section for [*extension selection criteria*](https://github.com/demon-rem/Title-Randomizer/new/master#extenstion-recongition) which explains this in detail.
+- Next, when asked to select modes, enter `auto` as the input. This selects `auto mode`, and the script uses default values for the inputs. [Check out the [In-Depth Usage Guide](https://github.com/demon-rem/Title-Randomizer#in-depth-usage-guide) for using **manual mode**]
+- When asked for the criteria to select file extensions, the average user can choose `hard mode`. If you're unsure about this, check out the section for [*extension selection criteria*](https://github.com/demon-rem/Title-Randomizer#extenstion-recongition) which explains this in detail.
 
 ## In-Depth Usage Guide
 This section explains how to use the script in manual mode.
 
-If you require a detailed explanation about the input parameters (including the default fall-back values), each of these input parameters has its own [section](https://github.com/demon-rem/Title-Randomizer/new/master#input-parameters) which shall provide you with a detailed explanation for that parameter.
+If you require a detailed explanation about the input parameters (including the default fall-back values), each of these input parameters has its own [section](https://github.com/demon-rem/Title-Randomizer#input-parameters) which shall provide you with a detailed explanation for that parameter.
 
 Here are the steps to follow:
 - Copy the full path of the directory containing the directory whose items are to be randomized. This path will be the value for the `root path`.
 
-- Select `manual` when asked for mode to use **manual mode**. [Check out the [Brief Usage Guide](https://github.com/demon-rem/Title-Randomizer/new/master#quick-usage-guide) for using **auto mode**]
+- Select `manual` when asked for mode to use **manual mode**. [Check out the [Brief Usage Guide](https://github.com/demon-rem/Title-Randomizer#quick-usage-guide) for using **auto mode**]
 
 - When asked for **randomization scheme**, selecting `fast` will be good enough for most people. As the name implies `safe` randomization scheme is very safe (meaning negligible chances of repeated random names), however, it is a tad bit slower. Generally, this should be chosen if you have more than 10K files whose names are to be randomized.
 
