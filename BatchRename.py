@@ -413,7 +413,7 @@ if __name__ == '__main__':
             # Getting the length required for the file names.
             value = int(input('Required length for the random ' +
                               'file names: ').strip())
-            if value < 3:
+            if value < 10:
                 # If the value is zero or a negative number, explicitly throwing
                 # an error to end up in the catch section :p
                 raise ValueError()
