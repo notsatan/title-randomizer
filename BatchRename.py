@@ -189,7 +189,7 @@ def generate_names(root: str, name_length: int, charset: str, extension_criteria
         if extension_criteria == Extension.hard:
             ext = item.rpartition('.')[-1]
         else:
-            ext = ''.join(PurePosixPath(item).suffixes)
+            ext = ''.join(PurePosixPath(item).suffixes).strip('.')
 
         # Generating a random title of the specified length and attaching file
         # extension to the title.
@@ -227,13 +227,12 @@ if __name__ == '__main__':
     # Initialze all values to empty string for now. These variables will later be resorted
     # to their defaults.
     root: str = ''
-    recurse: bool = ''
-    name_length: int = ''
-    character_set: str = ''
-    randomization: Mode = ''
-    operation_mode: str = ''
-    selection_mode: SelectionMode = ''
-    extension_selection: Extension = ''
+    name_length: int = 10
+    character_set: str = 'alphanumeric'
+    randomization: Mode = Mode.fast
+    operation_mode: str = 'auto'
+    selection_mode: SelectionMode = SelectionMode.recursive
+    extension_selection: Extension = Extension.soft
 
     # The regex patterns being used to extract information from incoming arguments.
     # If a value is to be extracted, it will be extracted from the FIRST group
@@ -245,7 +244,6 @@ if __name__ == '__main__':
     # Accepting ANY value as the choice in the patterns. If this value is incorrect, the
     # script will enter interactive mode and fetch correct input.
     pattern_root = r'^--root="?(.+)"?$'
-    pattern_opr_mode = r'^--mode="?(auto|manual)"?$'
     pattern_randomization = r'^--randomization="?(safe|fast)"?$'
     pattern_selection_strategy = r'^--(recursive|direct)$'
     pattern_file_length = r'^--title-length=(\d+)$'
@@ -259,21 +257,23 @@ if __name__ == '__main__':
         #
         # Allowing a match only if the parameter hasn't been filled already -- each parameter
         # can be filled at most once.
-        if match(pattern_root, arg) and len(root) == 0:
+        if match(pattern_root, arg):
             root = match(pattern_root, arg).groups()[0]
-        elif match(pattern_opr_mode, arg):
-            operation_mode = match(pattern_opr_mode, arg).groups()[0]
-        elif match(pattern_randomization, arg) and len(randomization) == 0:
+        elif match(pattern_randomization, arg):
             randomization = match(pattern_randomization, arg).groups()[0]
 
             randomization = Mode.safe if randomization == 'safe' else Mode.fast
-        elif match(pattern_selection_strategy, arg) and len(selection_mode) == 0:
+        elif match(pattern_selection_strategy, arg):
             selection_mode = match(pattern_selection_strategy, arg).groups()[0]
 
             selection_mode = SelectionMode.recursive if selection_mode == 'recursive' else SelectionMode.direct
-        elif match(pattern_file_length, arg) and len(name_length) == 0:
+        elif match(pattern_file_length, arg):
             name_length = int(match(pattern_file_length, arg).groups()[0])
-        elif match(pattern_character_set, arg) and len(character_set) == 0:
+
+            if name_length <= 7:
+                print('Error: New titles need to have a length of 8 characters or more')
+                exit(10)
+        elif match(pattern_character_set, arg):
             # Mapping char-set later, this value has to be printed, after which it will be mapped
             # to the correct input type.
             character_set = match(pattern_character_set, arg).groups()[0]
@@ -291,6 +291,10 @@ if __name__ == '__main__':
             # Doing this only if the operation mode hasn't been set already (to avoid over-writing
             # a value of `auto` mode).
             operation_mode = 'manual'
+
+    if operation_mode != 'manual':
+        # If the operation mode is not manual, by default it shall be auto.
+        operation_mode = 'auto'
 
     # The regex pattern ensures all parameters will be non-null (and belong in the expected)
     # range when required. Can directly validate them.
@@ -314,22 +318,6 @@ if __name__ == '__main__':
 
     # Converting relative path to absolute path.
     root = abspath(root)
-
-    # Any value that has not been supplied as a parameter, will be reset to its default
-    if randomization == '' or operation_mode == 'auto':
-        randomization = Mode.fast
-
-    if selection_mode == '' or operation_mode == 'auto':
-        selection_mode = SelectionMode.recursive
-
-    if name_length == '' or operation_mode == 'auto':
-        name_length = 15
-
-    if character_set == '' or operation_mode == 'auto':
-        character_set = 'alphabet'
-
-    if extension_selection == '' or operation_mode == 'auto':
-        extension_selection = Extension.hard
 
     print(f'''
         Configurations
