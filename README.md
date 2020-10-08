@@ -1,10 +1,39 @@
-## title-randomizer
 
-A simple utility script that batch randomizes the names of all the files present inside a directory.
+
+<p align="center">
+<img src="https://img.shields.io/github/license/demon-rem/title-randomizer?style=for-the-badge"/>
+
+<img src="https://img.shields.io/github/repo-size/demon-rem/title-randomizer?style=for-the-badge"/>
+</p>
+
+<br/>
+<p align="center">
+  <a href="https://github.com/demon-rem/title-randomizer/">
+    <img src="./images/image-main.jpg" alt="Logo" width="320" height="320">
+  </a>
+
+  <h3 align="center">title-randomizer</h3>
+
+  <p align="center">
+    A simple utility script that batch randomizes the names of all the files present inside a directory.
+    <br><br>
+    <a href="https://github.com/demon-rem/title-randomizer/"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    ·
+    <a href="https://github.com/demon-rem/title-randomizer/issues">Bug Report</a>
+    ·
+    <a href="https://github.com/demon-rem/title-randomizer/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/demon-rem/title-randomizer/fork">Fork Repo</a>
+    ·
+  </p>
+</p>
+
+---
 <br>
 
 ## Table of Contents
-- [title-randomizer](#title-randomizer)
 - [What does this script do?](#what-does-this-script-do)
 - [Quick Usage Guide](#quick-usage-guide)
 - [Input Parameters](#input-parameters)
