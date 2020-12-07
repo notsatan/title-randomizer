@@ -229,10 +229,10 @@ if __name__ == '__main__':
     root: str = ''
     name_length: int = 10
     character_set: str = 'alphanumeric'
-    randomization: Mode = Mode.fast
+    randomization: Mode = ''
     operation_mode: str = 'auto'
-    selection_mode: SelectionMode = SelectionMode.recursive
-    extension_selection: Extension = Extension.soft
+    selection_mode: SelectionMode = ''
+    extension_selection: Extension = ''
 
     # The regex patterns being used to extract information from incoming arguments.
     # If a value is to be extracted, it will be extracted from the FIRST group
